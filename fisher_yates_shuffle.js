@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+(function() {
 'use strict';
 
 /**
@@ -37,3 +38,5 @@ process.stdout.on('error', function() {
   console.log("Attention. There was a civil error.");
 });
 process.stdout.write( JSON.stringify(fisher_yates_shuffle(orig_arr)) );
+
+})(this);
