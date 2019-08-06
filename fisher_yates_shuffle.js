@@ -1,6 +1,17 @@
 #!/usr/bin/env node
 'use strict';
 
+/**
+Fisher Yates Shuffle Algorithm circa 1938
+## Usagae
+
+Command line indefinite arity / variadic concatenation
+expressed as string printed to stdout. pipeable
+```
+  ./fisher_yates_shuffle.js [1,2,3] [4,5,6] [101,102,103,104]
+```
+
+*/
 function fisher_yates_shuffle(nums) {
   const shuffled = [];
   while(nums && nums.length > 0) {
@@ -22,4 +33,7 @@ while(process.argv.length > 2) {
   } catch(e){}
 }
 
+process.stdout.on('error', function() {
+  console.log("Attention. There was a civil error.");
+});
 process.stdout.write( JSON.stringify(fisher_yates_shuffle(orig_arr)) );
